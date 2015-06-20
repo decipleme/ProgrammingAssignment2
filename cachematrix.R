@@ -63,7 +63,8 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
     ## first get the inverse from the cache and check if it is usable
     inv_mat <- x$getinverse()
-    if(!is.null(inv_mat) && identical(x$getprevmatrix(), x$getcachematrix())) {
+    if(!is.null(inv_mat) && 
+       identical(x$getprevmatrix(), x$getcachematrix())) {
         message("getting cached inverted matrix")
         return(inv_mat)
     }
